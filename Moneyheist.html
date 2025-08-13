@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
     <style>
+        
         body, ul {
             margin: 0;
             padding: 0;
             font-family: 'Lato', sans-serif;
             background-color: #1a1a1a; 
-            color: #fff;
+            color:white;
         }
-
+      
+       
         .main-box {
             background-image: url(Money.png.png); 
             height: 100vh;
@@ -120,6 +122,61 @@
             color: #EAC086;
             width: 20px; 
         }
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 15px; 
+            z-index: 100;
+        }
+
+        .nav-btn {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.4); 
+            border: 1px solid #D90429;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(3px); 
+        }
+        .nav-btn.signup-btn {
+            background-color:rgba(0, 0, 0, 0.4);
+            border-color: #D90429;
+        }
+
+        .nav-btn:hover {
+            background-color: #510400;
+            color: #EAC086;
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 10px rgba(217, 4, 41, 0.5);
+        }
+        .nav-btn.signup-btn:hover {
+          
+            border-color: #e53935;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                width: calc(100% - 40px); 
+                top: auto; 
+                bottom: 20px; 
+                left: 20px;
+                right: 20px;
+                justify-content: center; 
+                gap: 10px;
+            }
+
+            .nav-btn {
+                width: 50%; 
+                text-align: center;
+                font-size: 15px;
+                padding: 12px 10px;
+            }
+        }
+
         .social-btn {
             position: absolute;
             width: 100%;
@@ -289,21 +346,123 @@
                 display: none;
             }
         }
+        .nav-form {
+            background-color: #8b008b;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 7px;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+.main-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+}
+.hero-text {
+    text-align: center;
+    z-index: 5; 
+}
+
+.hero-text h1 {
+    font-family:'montserrat', sans-serif;
+    font-size: 7rem;
+    margin: 0;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 25px #510400;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInText 1.2s ease-out 1s forwards;
+}
+
+.hero-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #EAC086; 
+    
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInText 1.2s ease-out 1.3s forwards;
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3.1rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+@keyframes slideInFromLeft {
+    from {
+        clip-path: inset(0 40% 0 0); 
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+.main-box {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(Money.png.png); 
+    height: 100vh;
+    background-size: cover; 
+    background-position: center center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed; 
+        z-index: 1000; 
+    }
+
+    .btn-one {
+        z-index: 1001; 
+        top: 15px;
+        left: 15px;
+        font-size: 28px; 
+    }
+
+    .btn_two {
+        left: auto; 
+        right: 20px; 
+        top: 15px;
+    }
+}
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <button class="nav-bar login-btn">Login</button>
-        <button class="nav-bar signup-btn">Sign Up</button>
+      <div class="navbar">
+        <button class="nav-btn"><a href="moneyheistform.html"><a href="moneyheistform.html" style="text-decoration: none;">Login</a></button>
+        <button class="nav-btn signup-btn"><a href="moneyheistform.html" style="text-decoration: none;">Sign Up</a></button>
     </div>
-  
+       
+    <div class="main-box">
     <input type="checkbox" id="check">
     <div class="btn-one">
         <label for="check">
            <i class="fa-solid fa-bars"></i>
         </label>
     </div>
-
+<div class="hero-text">
+    <h1>MONEY HEIST</h1>
+    <p>The Ultimate Thrill</p>
+</div>
     <div class="sidebar">
         <div class="logo">
             <a href="#"><i class="fa-solid fa-masks-theater" style="color:#EAC086;"></i>BANGERS&nbsp;&nbsp; </a>
@@ -338,7 +497,7 @@
         </div>
     </div>
 
-    <div class="main-box"></div>
+    </div>
     
     <main class="content-area">
         <div class="cards-wrapper">
