@@ -6,9 +6,15 @@
     <title>Money Heist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- Tailwind CSS for the Quiz -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for the Quiz -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Inter:wght@400;500;600&family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- USER'S ORIGINAL STYLES -->
     <style>
-        
         body, ul {
             margin: 0;
             padding: 0;
@@ -17,9 +23,8 @@
             color:white;
         }
       
-       
         .main-box {
-            background-image: url(Money.png.png); 
+            background-image: url('https://placehold.co/1920x1080/000000/d90429?text=Money+Heist'); 
             height: 100vh;
             background-size: cover; 
             background-position: center center;
@@ -50,8 +55,7 @@
             backdrop-filter: blur(5px);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: all 0.4s ease-in-out; 
-            z-index: 1;
-            position: absolute;
+            z-index: 999; /* Adjusted z-index */
         }
         .sidebar .logo {
             padding: 15px 0;
@@ -142,7 +146,9 @@
             cursor: pointer;
             transition: all 0.3s ease;
             backdrop-filter: blur(3px); 
+            text-decoration: none; /* Add this for anchor tags styled as buttons */
         }
+        
         .nav-btn.signup-btn {
             background-color:rgba(0, 0, 0, 0.4);
             border-color: #D90429;
@@ -155,7 +161,6 @@
             box-shadow: 0 4px 10px rgba(217, 4, 41, 0.5);
         }
         .nav-btn.signup-btn:hover {
-          
             border-color: #e53935;
         }
         @media (max-width: 768px) {
@@ -197,37 +202,10 @@
         #check:checked ~ .sidebar { left: 0; }
         #check:checked ~ .btn-one { opacity: 0; }
 
-        .navbar {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-        .nav-bar {
-            color: #fff;
-            background:rgba(0, 0, 0, 0.3);
-            border: 1px solid #D90429;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 16px;
-            padding: 8px 18px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .nav-bar.signup-btn {
-             background-color: #D90429;
-        }
-        .nav-bar:hover {
-            background-color:#510400;
-            color:#EAC086;
-        }
-
         .content-area {
             padding: 50px 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr; 
+            grid-template-columns: 1fr; /* Single column layout */
             gap: 40px;
             align-items: center;
         }
@@ -346,177 +324,336 @@
                 display: none;
             }
         }
-        .nav-form {
-            background-color: #8b008b;
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 7px;
-            transition: background-color 0.3s ease;
-            white-space: nowrap;
+        .main-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative; 
         }
-.main-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; 
-}
-.hero-text {
-    text-align: center;
-    z-index: 5; 
-}
+        .hero-text {
+            text-align: center;
+            z-index: 5; 
+        }
 
-.hero-text h1 {
-    font-family:'montserrat', sans-serif;
-    font-size: 7rem;
-    margin: 0;
-    letter-spacing: 5px;
-    color: white;
-    text-shadow: 0 0 10px white, 0 0 25px #510400;
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: fadeInText 1.2s ease-out 1s forwards;
-}
+        .hero-text h1 {
+            font-family:'montserrat', sans-serif;
+            font-size: 7rem;
+            margin: 0;
+            letter-spacing: 5px;
+            color: white;
+            text-shadow: 0 0 10px white, 0 0 25px #510400;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInText 1.2s ease-out 1s forwards;
+        }
 
-.hero-text p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #EAC086; 
-    
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInText 1.2s ease-out 1.3s forwards;
-}
+        .hero-text p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #EAC086; 
+            
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInText 1.2s ease-out 1.3s forwards;
+        }
 
-@keyframes fadeInText {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 3.1rem;
-    }
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
-@keyframes slideInFromLeft {
-    from {
-        clip-path: inset(0 40% 0 0); 
-    }
-    to {
-        clip-path: inset(0 0 0 0);
-    }
-}
-.main-box {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(Money.png.png); 
-    height: 100vh;
-    background-size: cover; 
-    background-position: center center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: slideInFromLeft 1.5s ease-out forwards;
-}
-@media (max-width: 768px) {
-    .sidebar {
-        position: fixed; 
-        z-index: 1000; 
-    }
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 3.1rem;
+            }
+            .hero-text p {
+                font-size: 1rem;
+            }
+        }
+        @keyframes slideInFromLeft {
+            from {
+                clip-path: inset(0 100% 0 0); 
+            }
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+        .main-box {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("Money.png.png"); 
+            height: 100vh;
+            background-size: cover; 
+            background-position: center center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: slideInFromLeft 1.5s ease-out forwards;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed; 
+                z-index: 1000; 
+            }
 
-    .btn-one {
-        z-index: 1001; 
-        top: 15px;
-        left: 15px;
-        font-size: 28px; 
-    }
+            .btn-one {
+                z-index: 1001; 
+                top: 15px;
+                left: 15px;
+                font-size: 28px; 
+            }
 
-    .btn_two {
-        left: auto; 
-        right: 20px; 
-        top: 15px;
-    }
-}
+            .btn_two {
+                left: auto; 
+                right: 20px; 
+                top: 15px;
+            }
+        }
+        .side-by-side-container {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px; /* Space between video and quiz */
+        }
+        .side-by-side-container > .video-wrapper {
+            flex: 1 1 500px; 
+            max-width: 600px;
+        }
+        .side-by-side-container > .quiz-section {
+            flex: 1 1 500px;
+            max-width: 768px;
+        }
+        .quiz-section{
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .quiz-container h1, .quiz-container h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .quiz-card {
+            background-color: rgba(17, 24, 39, 0.85);
+            background-image: url("screenshot.png");
+            background-size:cover;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width:100%;
+          
+        }
+        .btn-answer {
+            background-color:rgba(0, 0, 0, 0.2);
+            border: 2px solid #4b5563; 
+            transition: all 0.3s ease;
+        }
+        .btn-answer:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background-color:rgba(0, 0, 0, 0.4);
+        }
+        .btn-action {
+            background: linear-gradient(145deg, #ef4444, #b91c1c);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-action:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+        }
+        .selected {
+            border-color: #f59e0b !important; 
+            background-color:#510400 !important; 
+            color:#EAC086;
+        }
+        .correct {
+            background: linear-gradient(145deg, #22c55e, #15803d) !important;
+            color: white !important;
+            border-color: #16a34a !important;
+            transform: scale(1.02);
+        }
+        .incorrect {
+            background: linear-gradient(145deg, #f87171, #dc2626) !important;
+            color: white !important;
+            border-color: #ef4444 !important;
+            transform:scale(1.02);
+        }
+        .btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #progress-bar {
+            transition: width 0.4s ease-in-out;
+        }
+        
+         .info-section {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            padding: 60px 40px;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+           
+        }
+        .info-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .info-section.reverse {
+            flex-direction: row-reverse;
+        
+        }
+        .info-text {
+            flex: 1;
+        }
+        .info-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color:#500400;  
+            font-weight: bolder;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .info-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
+        .info-image {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(217, 4, 41, 0.3);
+            flex-shrink: 0;
+        }
+        @media (max-width: 992px) {
+            .info-section, .info-section.reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+       
     </style>
 </head>
 <body>
-      <div class="navbar">
-        <button class="nav-btn"><a href="moneyheistform.html"><a href="moneyheistform.html" style="text-decoration: none;">Login</a></button>
-        <button class="nav-btn signup-btn"><a href="moneyheistform.html" style="text-decoration: none;">Sign Up</a></button>
+    <div class="navbar">
+        <a href="moneyheistform.html" class="nav-btn">Login</a>
+        <a href="moneyheistform.html" class="nav-btn signup-btn">Sign Up</a>
     </div>
-       
+        
     <div class="main-box">
-    <input type="checkbox" id="check">
-    <div class="btn-one">
-        <label for="check">
-           <i class="fa-solid fa-bars"></i>
-        </label>
-    </div>
-<div class="hero-text">
-    <h1>MONEY HEIST</h1>
-    <p>The Ultimate Thrill</p>
-</div>
-    <div class="sidebar">
-        <div class="logo">
-            <a href="#"><i class="fa-solid fa-masks-theater" style="color:#EAC086;"></i>BANGERS&nbsp;&nbsp; </a>
-        </div>
-        <div class="btn_two">
+        <input type="checkbox" id="check">
+        <div class="btn-one">
             <label for="check">
-                <i class="fa-solid fa-xmark"></i>
+               <i class="fa-solid fa-bars"></i>
             </label>
         </div>
-        <div class="search-container">
-            <input type="text" placeholder="search">
-            <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="hero-text">
+            <h1>MONEY HEIST</h1>
+            <p>The Ultimate Thrill</p>
         </div>
-        <div class="menu">
-            <ul>
-                <li><i class="fa-solid fa-user"></i><a href="#">Character</a></li>
-                <li><i class="fa-solid fa-person-rifle"></i><a href="#">Shoutout</a></li>
-                <li><i class="fa-solid fa-chalkboard-user"></i><a href="#">Professor</a></li>
-                <li><i class="fa-solid fa-comment"></i><a href="#">Comments</a></li>
-                <li><i class="fa-solid fa-euro-sign"></i><a href="#">Money</a></li>
-                <li><i class="fa-solid fa-image"></i><a href="#">Gallery</a></li>
-                <li><i class="fa-solid fa-download"></i><a href="#">Downloads</a></li>
-                <li><i class="fa-solid fa-location-dot"></i><a href="#">Location</a></li>
-                <li><i class="fa-solid fa-phone"></i><a href="#">Contact us</a></li>
-            </ul>
-        </div>
-        <div class="social-btn">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-google"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <div class="sidebar">
+            <div class="logo">
+                <a href="#"><i class="fa-solid fa-masks-theater" style="color:#EAC086;"></i>BANGERS&nbsp;&nbsp; </a>
+            </div>
+            <div class="btn_two">
+                <label for="check">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="search">
+                <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><i class="fa-solid fa-user"></i><a href="#">Character</a></li>
+                    <li><i class="fa-solid fa-person-rifle"></i><a href="#">Shoutout</a></li>
+                    <li><i class="fa-solid fa-chalkboard-user"></i><a href="#">Professor</a></li>
+                    <li><i class="fa-solid fa-comment"></i><a href="#">Comments</a></li>
+                    <li><i class="fa-solid fa-euro-sign"></i><a href="#">Money</a></li>
+                    <li><i class="fa-solid fa-image"></i><a href="#">Gallery</a></li>
+                    <li><i class="fa-solid fa-download"></i><a href="#">Downloads</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i><a href="#">Location</a></li>
+                    <li><i class="fa-solid fa-phone"></i><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="social-btn">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
         </div>
     </div>
+      <section class="info-section">
+        <img src="https://placehold.co/600x400/d90429/white?text=The+Plan" alt="A blueprint of a bank" class="info-image">
+        <div class="info-text">
+            <h2>The Professor's Plan</h2>
+            <p>Every move is a symphony, meticulously composed by the Professor. The plan is more than a strategy; it's a masterpiece of foresight, psychology, and audacity. Each contingency is accounted for, turning the Royal Mint and the Bank of Spain into chessboards where he is always ten moves ahead. The Professor spend 20 years of his life to make success this Plan. And second heist plan of his brother berlin and Berlin's friend Palermo. Professor after death of Berlin decide to execute that plan</p>
+        </div>
+    </section>
 
-    </div>
-    
+    <section class="info-section reverse">
+        <img src="https://placehold.co/600x400/eac086/1a1a1a?text=The+Team" alt="A group of people in red jumpsuits and Dali masks" class="info-image">
+        <div class="info-text">
+            <h2>The Heist Team</h2>
+            <p>A band of misfits, each with a unique and volatile skill set, brought together by a shared dream of rebellion. From the hot-headed determination of Tokyo to the technical genius of Rio and the unwavering strength of Nairobi, this family, forged in chaos, is the heart of the resistance. Other members of both heist : Denver , Moscow , Stowkhom , manella , Pumplona , Lisbon , Benzamin , Marsalia , Helshinki , Bughotta , oslo. </p>
+        </div>
+    </section>
+      <section class="info-section">
+        <img src="Blue.png" alt="A blueprint of a bank" class="info-image">
+        <div class="info-text">
+            <h2>The Thrillnes</h2>
+            <p>Professor make his plan so many years he predict all kind of danger and predict all kind of situation whereas all mistake also a part of hesit and he maked the police , army fool every time. Every move is a symphony, meticulously composed by the Professor. The plan is more than a strategy; it's a masterpiece of foresight, psychology, and audacity.</p>
+        </div>
+    </section>
+   
     <main class="content-area">
         <div class="cards-wrapper">
             <div class="character-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVxqGYsJV-q46YeLysshAOymmzzcoNzM_Wg&s" alt="Professor img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVxqGYsJV-q46YeLysshAOymmzzcoNzM_Wg&s" alt="Professor img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Professor';">
                 <div class="card-details">
                     <h3 class="card-title">Professor</h3>
                     <p class="content">Master Mind of this heist "MONEY HEIST"</p>
                 </div>
             </div>
             <div class="character-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJMIE55eBK2IyBWkuLNvCIaamtQcsw0_yQ7A&s" alt="Berlin img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJMIE55eBK2IyBWkuLNvCIaamtQcsw0_yQ7A&s" alt="Berlin img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Berlin</h3>
                     <p class="content">Leader of heist & big brother of professor "MONEY HEIST"</p>
                 </div>
             </div>
+             <div class="character-card">
+                <img src="Tokyo.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <div class="card-details">
+                    <h3 class="card-title">Tokyo</h3>
+                    <p class="content">Lead the series as a narrator voice and killer role "MONEY HEIST"</p>
+                </div>
+            </div>
+             <div class="character-card">
+                <img src="Denver.jpeg" alt="Denver img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <div class="card-details">
+                    <h3 class="card-title">Denver</h3>
+                    <p class="content">Devil and iconic laugh wiht attitude and Boom Boom"MONEY HEIST"</p>
+                </div>
+            </div>
             <div class="character-card">
-                <img src="data:image/jpeg;base64,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" alt="Palermo img">
+                <img src="palermo.jpeg" alt="Palermo img">
                 <div class="card-details">
                     <h3 class="card-title">Palermo</h3>
                     <p class="content">Best friend of Berlin & incharge of 2nd heist "MONEY HEIST"</p>
@@ -524,27 +661,72 @@
             </div>
         </div>
 
-        <div class="video-wrapper">
-            <h1>La Casa De Papel</h1>
-            <p>The One And Only OG Series</p>
-            <div class="video-container">
-                <video id="myVideo" loop muted autoplay>
-                    <source src="MH.mp4" type="video/mp4"> </video>
-                <div class="video-controls">
-                    <button id="playPauseBtn">
-                        <i class="fa-solid fa-play" id="playIcon"></i>
-                        <i class="fa-solid fa-pause" id="pauseIcon"></i>
-                    </button>
-                    <button id="muteBtn">
-                        <i class="fa-solid fa-volume-high" id="unmuteIcon"></i>
-                        <i class="fa-solid fa-volume-xmark" id="muteIcon"></i>
-                    </button>
-                    <input type="range" id="volumeSlider" min="0" max="100" class="volume-slider">
+
+        <div class="side-by-side-container">
+            <div class="video-wrapper">
+                <h1>La Casa De Papel</h1>
+                <p>The One And Only OG Series</p>
+                <div class="video-container">
+                    <video id="myVideo" loop muted autoplay>
+                        <source src="MH.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-controls">
+                        <button id="playPauseBtn">
+                            <i class="fa-solid fa-play" id="playIcon"></i>
+                            <i class="fa-solid fa-pause" id="pauseIcon"></i>
+                        </button>
+                        <button id="muteBtn">
+                            <i class="fa-solid fa-volume-high" id="unmuteIcon"></i>
+                            <i class="fa-solid fa-volume-xmark" id="muteIcon"></i>
+                        </button>
+                        <input type="range" id="volumeSlider" min="0" max="100" class="volume-slider">
+                    </div>
                 </div>
             </div>
+
+            <section class="quiz-section">
+                <div class="quiz-card p-6 sm:p-8 rounded-2xl shadow-2xl">
+                    <div class="quiz-container">
+                        <div class="text-center mb-4">
+                            <div class="flex justify-center items-center gap-3">
+                                <svg class="w-10 h-10 text-red-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.104 3.431C14.856 2.553 13.038 2 12 2S9.144 2.553 7.896 3.431C6.012 4.76 5 7.331 5 10V12H19V10C19 7.331 17.988 4.76 16.104 3.431Z" fill="#FEE2E2"/>
+                                    <path d="M5 12V10C5 7.331 6.012 4.76 7.896 3.431C9.144 2.553 10.962 2 12 2C13.038 2 14.856 2.553 16.104 3.431C17.988 4.76 19 7.331 19 10V12M5 12V14C5 18.418 8.582 22 13 22H14.5M5 12H19M19 12V14C19 18.418 15.418 22 11 22H9.5M9 16C9 16.552 8.552 17 8 17C7.448 17 7 16.552 7 16C7 15.448 7.448 15 8 15C8.552 15 9 15.448 9 16ZM17 16C17 16.552 16.552 17 16 17C15.448 17 15 16.552 15 16C15 15.448 15.448 15 16 15C16.552 15 17 15.448 17 16Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 14C13.657 14 15 12.657 15 11C15 9.343 13.657 8 12 8C10.343 8 9 9.343 9 11C9 12.657 10.343 14 12 14Z" stroke="#DC2626" stroke-width="2"/>
+                                </svg>
+                                <h1 class="text-2xl sm:text-4xl font-bold uppercase text-white">Fan Quiz</h1>
+                            </div>
+                        </div>
+                        
+                        <div class="w-full bg-gray-700 rounded-full h-2.5 mb-6">
+                            <div id="progress-bar" class="bg-red-600 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+
+                        <div id="quiz-content-container">
+                            <div id="question-container" class="mb-6 fade-in">
+                                <h2 id="question" class="text-xl sm:text-2xl font-semibold mb-5 text-center text-gray-100">Question text goes here</h2>
+                                <div id="answer-buttons" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+                            </div>
+                            <p id="validation-message" class="text-yellow-400 text-center mb-4 hidden">Please select an answer to continue.</p>
+                            <div class="flex justify-center mt-8">
+                                <button id="next-btn" class="btn btn-action text-white font-bold py-3 px-10 rounded-lg w-full sm:w-auto text-lg uppercase">Next</button>
+                            </div>
+                        </div>
+
+                        <div id="score-container" class="hidden text-center fade-in">
+                            <h2 id="score-text" class="text-3xl sm:text-4xl font-bold mb-4 text-white"></h2>
+                            <p id="final-message" class="text-lg text-gray-300 mb-8"></p>
+                            <div class="flex justify-center">
+                                <button id="play-again-btn" class="btn btn-action text-white font-bold py-3 px-10 rounded-lg text-lg uppercase">Play Again</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const video = document.getElementById('myVideo');
@@ -556,42 +738,190 @@
         const muteIcon = document.getElementById('muteIcon');
         const volumeSlider = document.getElementById('volumeSlider');
 
-        playPauseBtn.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'inline';
-            } else {
-                video.pause();
-                playIcon.style.display = 'inline';
-                pauseIcon.style.display = 'none';
+        if(video) { 
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'inline';
+                } else {
+                    video.pause();
+                    playIcon.style.display = 'inline';
+                    pauseIcon.style.display = 'none';
+                }
+            });
+
+            muteBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                updateMuteState();
+            });
+
+            volumeSlider.addEventListener('input', (e) => {
+                video.volume = e.target.value / 100;
+                video.muted = video.volume === 0;
+                updateMuteState();
+            });
+
+            function updateMuteState() {
+                if (video.muted || video.volume === 0) {
+                    unmuteIcon.style.display = 'none';
+                    muteIcon.style.display = 'inline';
+                    volumeSlider.value = 0;
+                } else {
+                    unmuteIcon.style.display = 'inline';
+                    muteIcon.style.display = 'none';
+                    volumeSlider.value = video.volume * 100;
+                }
             }
-        });
-
-        muteBtn.addEventListener('click', () => {
-            video.muted = !video.muted;
             updateMuteState();
-        });
+        }
 
-        volumeSlider.addEventListener('input', (e) => {
-            video.volume = e.target.value / 100;
-            video.muted = video.volume === 0;
-            updateMuteState();
-        });
+        const quizQuestions = [
+            { question: "What is the Professor's real name?", answers: [{ text: "Andrés de Fonollosa", correct: false }, { text: "Aníbal Cortés", correct: false }, { text: "Sergio Marquina", correct: true }, { text: "Agustín Ramos", correct: false }] },
+            { question: "Which city is the code name of the female robber who is also the narrator?", answers: [{ text: "Nairobi", correct: false }, { text: "Tokyo", correct: true }, { text: "Lisbon", correct: false }, { text: "Stockholm", correct: false }] },
+            { question: "What is the name of the first heist location?", answers: [{ text: "Bank of Spain", correct: false }, { text: "Royal Mint of Spain", correct: true }, { text: "National Museum of Art", correct: false }, { text: "Madrid Stock Exchange", correct: false }] },
+            { question: "What is Berlin's real name, who is also The Professor's brother?", answers: [{ text: "Martín Berrote", correct: false }, { text: "Andrés de Fonollosa", correct: true }, { text: "César Gandía", correct: false }, { text: "Ángel Rubio", correct: false }] },
+            { question: "Who is the hot-headed character who falls in love with Tokyo?", answers: [{ text: "Denver", correct: false }, { text: "Berlin", correct: false }, { text: "Helsinki", correct: false }, { text: "Rio", correct: true }] },
+            { question: "What song becomes the anthem for the robbers and the resistance?", answers: [{ text: "Bella Ciao", correct: true }, { text: "La Marseillaise", correct: false }, { text: "Ode to Joy", correct: false }, { text: "Ti Amo", correct: false }] },
+            { question: "Who is the inspector in charge of the case during the first heist?", answers: [{ text: "Alicia Sierra", correct: false }, { text: "Mónica Gaztambide", correct: false }, { text: "Raquel Murillo", correct: true }, { text: "Ariadna Cascales", correct: false }] },
+            { question: "Which character is known for his distinctive, infectious laugh?", answers: [{ text: "Palermo", correct: false }, { text: "The Professor", correct: false }, { text: "Arturo Román", correct: false }, { text: "Denver", correct: true }] }
+        ];
 
-        function updateMuteState() {
-            if (video.muted || video.volume === 0) {
-                unmuteIcon.style.display = 'none';
-                muteIcon.style.display = 'inline';
-                volumeSlider.value = 0;
+        const questionElement = document.getElementById("question");
+        const answerButtons = document.getElementById("answer-buttons");
+        const nextButton = document.getElementById("next-btn");
+        const quizContentContainer = document.getElementById("quiz-content-container");
+        const scoreContainer = document.getElementById("score-container");
+        const scoreText = document.getElementById("score-text");
+        const finalMessage = document.getElementById("final-message");
+        const playAgainButton = document.getElementById("play-again-btn");
+        const validationMessage = document.getElementById("validation-message");
+        const progressBar = document.getElementById("progress-bar");
+        const questionContainer = document.getElementById("question-container");
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answerIsSelected = false;
+
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            quizContentContainer.classList.remove('hidden');
+            scoreContainer.classList.add('hidden');
+            updateProgressBar();
+            showQuestion();
+        }
+
+        function showQuestion() {
+            resetState();
+            questionContainer.classList.remove("fade-in");
+            void questionContainer.offsetWidth; 
+            questionContainer.classList.add("fade-in");
+            let currentQuestion = quizQuestions[currentQuestionIndex];
+            questionElement.innerHTML = currentQuestion.question;
+            currentQuestion.answers.forEach(answer => {
+                const button = document.createElement("button");
+                button.innerHTML = answer.text;
+                button.classList.add("btn", "btn-answer", "w-full", "p-4", "rounded-lg", "text-left", "text-white", "font-medium");
+                button.dataset.correct = answer.correct;
+                button.addEventListener("click", selectAnswer);
+                answerButtons.appendChild(button);
+            });
+        }
+
+        function resetState() {
+            answerIsSelected = false;
+            validationMessage.classList.add("hidden");
+            nextButton.disabled = false;
+            if(currentQuestionIndex === quizQuestions.length - 1) {
+                nextButton.innerHTML = "Show Score";
             } else {
-                unmuteIcon.style.display = 'inline';
-                muteIcon.style.display = 'none';
-                volumeSlider.value = video.volume * 100;
+                nextButton.innerHTML = "Next";
+            }
+            while (answerButtons.firstChild) {
+                answerButtons.removeChild(answerButtons.firstChild);
             }
         }
+
+        function selectAnswer(e) {
+            Array.from(answerButtons.children).forEach(button => {
+                button.classList.remove('selected');
+            });
+            e.target.classList.add('selected');
+            answerIsSelected = true;
+            validationMessage.classList.add("hidden");
+        }
         
-        updateMuteState();
+        function updateProgressBar() {
+            const progressPercentage = ((currentQuestionIndex) / quizQuestions.length) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+
+        function showScore() {
+            quizContentContainer.classList.add('hidden');
+            scoreContainer.classList.remove('hidden');
+            scoreContainer.classList.add("fade-in");
+            scoreText.innerHTML = `You scored ${score} out of ${quizQuestions.length}!`;
+            if (score === quizQuestions.length) {
+                finalMessage.innerHTML = "Yes, you are a true Money Heist fan! Bella Ciao!";
+            } else if (score >= 5) {
+                finalMessage.innerHTML = "Great job! You know your way around a heist.";
+            } else {
+                finalMessage.innerHTML = "Looks like you might need to re-watch the series!";
+            }
+        }
+
+        function handleNextButton() {
+            if (!answerIsSelected) {
+                validationMessage.classList.remove("hidden");
+                return;
+            }
+            const selectedBtn = answerButtons.querySelector('.selected');
+            const isCorrect = selectedBtn.dataset.correct === "true";
+            if (isCorrect) {
+                score++;
+            }
+            selectedBtn.classList.remove('selected');
+            selectedBtn.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+            Array.from(answerButtons.children).forEach(button => {
+                if (button.dataset.correct === "true") {
+                    button.classList.add('correct');
+                }
+                button.disabled = true;
+            });
+            
+            nextButton.disabled = true;
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizQuestions.length) {
+                    updateProgressBar();
+                    showQuestion();
+                } else {
+                    progressBar.style.width = '100%';
+                    showScore();
+                }
+            }, 1500);
+        }
+
+        nextButton.addEventListener("click", handleNextButton);
+        playAgainButton.addEventListener("click", startQuiz);
+
+        startQuiz();
+         const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.info-section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        startQuiz();
     </script>
 </body>
 </html>
