@@ -12,10 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Inter:wght@400;500;600&family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* === SMOOTH SCROLL ADDED === */
+        
         html {
             scroll-behavior: smooth;
-            /* यह सुनिश्चित करता है कि फिक्स्ड हेडर के पीछे कंटेंट न छिपे */
             scroll-padding-top: 60px; 
         }
 
@@ -28,7 +27,7 @@
         }
       
         .main-box {
-            background-image: url('https://placehold.co/1920x1080/000000/d90429?text=Money+Heist'); 
+            background-image: url("images/Money.png.png");
             height: 100vh;
             background-size: cover; 
             background-position: center center;
@@ -150,7 +149,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             backdrop-filter: blur(3px); 
-            text-decoration: none; /* Add this for anchor tags styled as buttons */
+            text-decoration: none; 
         }
         
         .nav-btn.signup-btn {
@@ -209,11 +208,24 @@
         .content-area {
             padding: 50px 20px;
             display: grid;
-            grid-template-columns: 1fr; /* Single column layout */
+            grid-template-columns: 1fr; 
             gap: 40px;
             align-items: center;
         }
-
+        .char{
+            font-size: 70px;
+            font-weight: bolder;
+            margin: 0% auto;
+            color:#510400;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .char-2{
+            font-size: 70px;
+            font-weight: bolder;
+            margin: 0% auto;
+            color:#510400;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
         .cards-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -245,19 +257,20 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0)); 
+            background-image:url("images/Money.png.png");
+            background-color: rgba(0, 0, 0, 0.2);
             color: white;
             padding: 60px 20px 20px 20px; 
             transform: translateY(100%);
-            opacity: 0;
+            opacity:0;
             transition: transform 0.5s ease, opacity 0.5s ease;
         }
         .character-card:hover .card-details {
             transform: translateY(0); 
-            opacity: 1; 
+            opacity: 0.7; 
         }
         .character-card:hover img {
-            transform: scale(1.1); 
+            transform: scale(1.2); 
         }
         .card-title {
             margin: 0;
@@ -388,7 +401,7 @@
             }
         }
         .main-box {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("Money.png.png"); 
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("Images/Money.png.png"); 
             height: 100vh;
             background-size: cover; 
             background-position: center center;
@@ -422,7 +435,7 @@
             flex-wrap: wrap; 
             justify-content: center;
             align-items: flex-start;
-            gap: 40px; /* Space between video and quiz */
+            gap: 40px; 
         }
         .side-by-side-container > .video-wrapper {
             flex: 1 1 500px; 
@@ -589,7 +602,7 @@
                     <li><i class="fa-solid fa-chalkboard-user"></i><a href="#plan">The Plan</a></li>
                     <li><i class="fa-solid fa-users"></i><a href="#team">The Team</a></li>
                     <li><i class="fa-solid fa-user"></i><a href="#characters">Characters</a></li>
-                    <li><i class="fa-solid fa-masks-theater"></i><a href="#thrill">The Thrill</a></li>
+                    <li><i class="fa-solid fa-warning"></i><a href="#thrill">The Thrill</a></li>
                     <li><i class="fa-solid fa-video"></i><a href="#media">Video & Quiz</a></li>
                     <li><i class="fa-solid fa-location"></i><a href="#Location">Locations</a></li>
                 </ul>
@@ -601,10 +614,14 @@
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
+
     </div>
+    <hr>
+     
       <section class="info-section" id="plan">
         <img src="https://placehold.co/600x400/d90429/white?text=The+Plan" alt="A blueprint of a bank" class="info-image">
         <div class="info-text">
+            <div class="char-2">Theory of Heist</div>
             <h2>The Professor's Plan</h2>
             <p>Every move is a symphony, meticulously composed by the Professor. The plan is more than a strategy; it's a masterpiece of foresight, psychology, and audacity. Each contingency is accounted for, turning the Royal Mint and the Bank of Spain into chessboards where he is always ten moves ahead. The Professor spend 20 years of his life to make success this Plan. And second heist plan of his brother berlin and Berlin's friend Palermo. Professor after death of Berlin decide to execute that plan</p>
         </div>
@@ -618,14 +635,15 @@
         </div>
     </section>
       <section class="info-section" id="thrill">
-        <img src="Blue.png" alt="A blueprint of a bank" class="info-image">
+        <img src="images/Blue.png" alt="A blueprint of a bank" class="info-image">
         <div class="info-text">
             <h2>The Thrillnes</h2>
             <p>Professor make his plan so many years he predict all kind of danger and predict all kind of situation whereas all mistake also a part of hesit and he maked the police , army fool every time. Every move is a symphony, meticulously composed by the Professor. The plan is more than a strategy; it's a masterpiece of foresight, psychology, and audacity.</p>
         </div>
     </section>
-    
+ 
     <main class="content-area" id="characters">
+        <div class="char">Characters</div>
         <div class="cards-wrapper">
             <div class="character-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSVxqGYsJV-q46YeLysshAOymmzzcoNzM_Wg&s" alt="Professor img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Professor';">
@@ -642,56 +660,56 @@
                 </div>
             </div>
              <div class="character-card">
-                <img src="Tokyo.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <img src="images/Tokyo.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Tokyo</h3>
                     <p class="content">Lead the series as a narrator voice and killer role "MONEY HEIST"</p>
                 </div>
             </div>
               <div class="character-card">
-                <img src="nairobi.jpeg" alt="Nairobi img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <img src="images/nairobi.jpeg" alt="Nairobi img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Nairobi</h3>
                     <p class="content">Lead the heist main part printing 1B Euros and melting 90 Ton Gold "MONEY HEIST"</p>
                 </div>
             </div>
                <div class="character-card">
-                <img src="helshenki.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <img src="images/helshenki.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Helshinki</h3>
                     <p class="content">Supporter in every situation and obey the rules "MONEY HEIST"</p>
                 </div>
             </div>
               <div class="character-card">
-                <img src="raquel.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <img src="images/raquel.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Raquell</h3>
                     <p class="content">The cop in first heist and the thief in second heist as Professor wife"MONEY HEIST"</p>
                 </div>
             </div>
                <div class="character-card">
-                <img src="rio.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <img src="images/rio.jpeg" alt="Tokyo img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Rio</h3>
                     <p class="content">Lead the cyber role is series and boyfriend of Tokyo "MONEY HEIST"</p>
                 </div>
             </div>
               <div class="character-card">
-                <img src="moscow.jpeg" alt="Moscow img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <img src="images/moscow.jpeg" alt="Moscow img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Moscow</h3>
                     <p class="content">Lead the role of digging in first heist and father of Denver "MONEY HEIST"</p>
                 </div>
             </div>
              <div class="character-card">
-                <img src="Denver.jpeg" alt="Denver img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
+                <img src="images/Denver.jpeg" alt="Denver img" onerror="this.onerror=null;this.src='https://placehold.co/250x320/000/fff?text=Berlin';">
                 <div class="card-details">
                     <h3 class="card-title">Denver</h3>
                     <p class="content">Devil and iconic laugh wiht attitude and Boom Boom"MONEY HEIST"</p>
                 </div>
             </div>
             <div class="character-card">
-                <img src="palermo.jpeg" alt="Palermo img">
+                <img src="images/palermo.jpeg" alt="Palermo img">
                 <div class="card-details">
                     <h3 class="card-title">Palermo</h3>
                     <p class="content">Best friend of Berlin & incharge of 2nd heist "MONEY HEIST"</p>
@@ -706,7 +724,7 @@
                 <p>The One And Only OG Series</p>
                 <div class="video-container">
                     <video id="myVideo" loop muted autoplay>
-                        <source src="MH.mp4" type="video/mp4">
+                        <source src="images/MH.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <div class="video-controls">
@@ -765,7 +783,7 @@
         </div>
     </main>
      <section class="info-section" id="Location">
-        <img src="royalmint.jpeg" alt="A blueprint of a bank" class="info-image">
+        <img src="images/royalmint.jpeg" alt="A blueprint of a bank" class="info-image">
         <div class="info-text">
             <h2>Royal Mint of Spain</h2>
             <p>In Money Heist, eight robbers, led by the mastermind known as "The Professor," take hostages and lock themselves inside the Royal Mint of Spain. Their plan is to print €2.4 billion by staying inside for 11 days while negotiating and outsmarting the police outside. Wearing red jumpsuits and Dalí masks, they cut off all communication and secretly dig an escape tunnel. The heist involves intense struggles with hostages, police, and internal conflicts, but they manage to print and escape with €984 million. It’s a gripping mix of strategy, loyalty, and action! 🎭  
@@ -773,7 +791,8 @@
         </div>
     </section>
      <section class="info-section reverse" id="Location">
-        <img src="bankofspain.jpeg" alt="A group of people in red jumpsuits and Dali masks" class="info-image">
+        
+        <img src="images/bankofspain.jpeg" alt="A group of people in red jumpsuits and Dali masks" class="info-image">
         <div class="info-text">
             <h2>Bank of SPAIN</h2>
             <p>In Money Heist, the Bank of Spain heist starts with the gang taking control of the central bank to force the government to release Rio. They break into the vault to steal gold and protect a kidnapped hostage inside while dealing with intense police assaults. The robbers face internal conflicts, betrayals, and battles with security forces. The heist lasts around seven days and showcases high tension, clever tactics, and emotional drama as they try to pull off the biggest gold heist in history. 🔥  </p>
@@ -984,6 +1003,7 @@
                 document.getElementById('check').checked = false;
             });
         });
+        
 
     </script>
 </body>
