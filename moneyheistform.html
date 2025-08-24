@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body>
-    <div class="flip-container">
+    <form action="/submit-form" method="POST">
+            <div class="flip-container">
         <div class="card" id="card">
             
             <div class="form-container front">
@@ -90,20 +91,23 @@
 
         </div>
     </div>
-<script src="server.js"></script>
-    <script>
-        const card = document.getElementById('card');
-        const showSignupLink = document.getElementById('show-signup');
-        const showLoginLink = document.getElementById('show-login');
+    </form>
 
-        showSignupLink.addEventListener('click', () => {
-            card.classList.add('is-flipped');
-        });
+<script src="server.js"></script> 
+<script>
+    const card = document.getElementById('card');
+    const showSignupLink = document.getElementById('show-signup');
+    const showLoginLink = document.getElementById('show-login');
 
-        showLoginLink.addEventListener('click', () => {
-            card.classList.remove('is-flipped');
-        });
-    </script>
+    showSignupLink.addEventListener('click', () => {
+        card.classList.add('is-flipped');
+    });
+
+    showLoginLink.addEventListener('click', () => {
+        card.classList.remove('is-flipped');
+    });
+</script>
+     
 
 </body>
 </html>

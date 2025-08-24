@@ -4,10 +4,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
+    flex-wrap:wrap;
+    margin-top: 990px;
     color: white;
     overflow: hidden;
-    background-image: url("screenshot.png");
+    background-image: url("images/screenshot.png");
 }
 @keyframes entryAnimation {
     from {
@@ -41,6 +42,7 @@ body {
 .flip-container {
     position: relative; 
     z-index: 1;
+    margin:0 auto;
 }
 .form-container {
     position: absolute;
@@ -52,6 +54,7 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     display: flex;
+    
     flex-direction: column;
     justify-content: center;
     backdrop-filter: blur(10px); 
@@ -70,7 +73,7 @@ body {
     min-height: 650px;
     transition: transform 0.9s;
     transform-style: preserve-3d;
-    
+
 }
 
 .card.is-flipped {
@@ -110,6 +113,7 @@ form {
     background: linear-gradient(125deg, #e0c7fc, #2ec5dc, #e0c3fc, #f0e68c);
     font-size: 15px;
     box-sizing: border-box;
+    
 }
 
 .input-box i {
